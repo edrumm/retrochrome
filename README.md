@@ -1,13 +1,19 @@
 # retrochrome
-chrome texture plugin for GIMP
+chrome texture plugin for GIMP 2
 
 *Under construction*
+
+## Installation
+
+To-do
 
 ## Usage
 
 Filters > Render > Retrochrome...
 
-## To-do
+### Parameters
+
+...
 
 ...
 

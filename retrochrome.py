@@ -19,13 +19,11 @@ def retrochrome(image, drawable, burn):
     width = image.width
 
     rc_layer_temp = pdb.gimp_layer_new(image, width, height, RGB_IMAGE, "retrochrome-temp", 100, LAYER_MODE_NORMAL_LEGACY)
-
-    # TODO determine layer position, temp value for now
-    # use 1+pdb.gimp_image_get_item_position(img, layer) to insert above
-    rc_layer_temp_pos = 1
+    rc_layer_temp_pos = 0  # pdb.gimp_image_get_item_position(image, rc_layer_temp)
     
     # TODO check None is correct for parent, should be
-    pdb.gimp_image_insert_layer(image, rc_layer_temp, None, rc_layer_temp_pos)
+    # TODO check why this merges into background. Reproduce with layers: Background, text layer to apply effect, arbitrary layer above
+    pdb.gimp_image_insert_layer(image, rc_layer_temp, None, 1)
     rc_temp_layer = pdb.gimp_image_merge_down(image, drawable, EXPAND_AS_NECESSARY)
 
     drawable = get_active_drawable(image)
